@@ -1,0 +1,12 @@
+# Build Folder
+build/
+
+# Gradle
+.gradle
+!gradle/wrapper/gradle-wrapper.jar
+
+# IntelliJ files
+.idea
+*.iml
+# Local Properties
+/local.properties
