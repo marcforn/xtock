@@ -33,20 +33,41 @@ android {
 
 dependencies {
     // Kotlin
-    implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$KOTLIN_VERSION"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$KOTLIN_VERSION"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$COROUTINES_VERSION"
 
     // Android
-    implementation 'androidx.appcompat:appcompat:1.0.0-beta01'
-    implementation 'androidx.core:core-ktx:1.1.0-alpha03'
-    implementation 'com.google.android.material:material:1.0.0-beta01'
-    implementation 'androidx.constraintlayout:constraintlayout:1.1.2'
+    implementation "androidx.appcompat:appcompat:$ANDROID_APP_COMPAT"
+    implementation "androidx.core:core-ktx:$ANDROID_CORE_KTX"
+    implementation "com.google.android.material:material:$ANDROID_MATERIAL"
+    implementation "androidx.constraintlayout:constraintlayout:$ANDROID_CONSTRAINT_LAYOUT"
+
+    // Dagger
+    implementation "com.google.dagger:dagger:$DAGGER_VERSION"
+    kapt "com.google.dagger:dagger-compiler:$DAGGER_VERSION"
+
+    // Retrofit
+    implementation "com.squareup.retrofit2:retrofit:$RETROFIT_VERSION"
+    implementation "com.squareup.okhttp3:logging-interceptor:$OKHTP3_VERSION"
+    implementation "com.squareup.retrofit2:converter-gson:$RETROFIT_VERSION"
+
+    // Gson
+    implementation "com.google.code.gson:gson:$GSON_VERSION"
+
+    // Development support
+    debugImplementation "com.facebook.stetho:stetho:$STETHO_VERSION"
+    debugImplementation "com.squareup.leakcanary:leakcanary-android:$LEAK_CANARY_VERSION"
+
+    // Firebase
+    implementation "com.google.firebase:firebase-core:$FIREBASE_CORE_VERSION"
+    implementation "com.google.firebase:firebase-perf:$FIREBASE_PERF_VERSION"
 
     // Unit Testing
     testImplementation "junit:junit:$JUNIT_VERSION"
 
     // Instrumentation Testing
-    androidTestImplementation 'androidx.test:runner:1.1.0-alpha4'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0-alpha4'
+    androidTestImplementation 'androidx.test:runner:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
 }
 
 static def buildVersionCode() {
