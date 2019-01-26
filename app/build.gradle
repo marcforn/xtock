@@ -1,11 +1,14 @@
 import java.text.SimpleDateFormat
 
 apply plugin: 'com.android.application'
+apply plugin: 'kotlin-kapt'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'com.google.firebase.firebase-perf'
 apply from: 'test.gradle'
 
 android {
+
     defaultConfig {
         applicationId "mforn.io.xtock"
 
@@ -36,6 +39,7 @@ dependencies {
     // Kotlin
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$KOTLIN_VERSION"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$COROUTINES_VERSION"
+    implementation "org.jetbrains.anko:anko-commons:$ANKO_VERSION"
 
     // Android
     implementation "androidx.appcompat:appcompat:$ANDROID_APP_COMPAT"
@@ -45,12 +49,16 @@ dependencies {
 
     // Dagger
     implementation "com.google.dagger:dagger:$DAGGER_VERSION"
+    implementation "com.google.dagger:dagger-android:$DAGGER_VERSION"
     kapt "com.google.dagger:dagger-compiler:$DAGGER_VERSION"
+    kapt "com.google.dagger:dagger-android-processor:$DAGGER_VERSION"
 
     // Retrofit
     implementation "com.squareup.retrofit2:retrofit:$RETROFIT_VERSION"
-    implementation "com.squareup.okhttp3:logging-interceptor:$OKHTP3_VERSION"
     implementation "com.squareup.retrofit2:converter-gson:$RETROFIT_VERSION"
+    implementation "com.squareup.okhttp3:logging-interceptor:$OKHTP3_VERSION"
+    implementation "com.jakewharton.retrofit:retrofit2-kotlin-coroutines-experimental-adapter:$RETROFIT_COROUTINES_ADAPTER"
+
 
     // Gson
     implementation "com.google.code.gson:gson:$GSON_VERSION"
@@ -61,7 +69,6 @@ dependencies {
 
     // Firebase
     implementation "com.google.firebase:firebase-core:$FIREBASE_CORE_VERSION"
-    implementation "com.google.firebase:firebase-perf:$FIREBASE_PERF_VERSION"
 
     // Unit Testing
     testImplementation "junit:junit:$JUNIT_VERSION"

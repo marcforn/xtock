@@ -1,9 +1,12 @@
-package mforn.io.xtock.data.webservice.configuration
+package mforn.io.xtock.data.webservice.configuration.di
 
 import com.google.gson.GsonBuilder
+import com.jakewharton.retrofit2.adapter.kotlin.coroutines.experimental.CoroutineCallAdapterFactory
 import dagger.Module
 import dagger.Provides
 import mforn.io.xtock.BuildConfig
+import mforn.io.xtock.data.webservice.configuration.BASE_URL
+import mforn.io.xtock.data.webservice.configuration.TIME_OUT_MILLIS
 import mforn.io.xtock.data.webservice.configuration.api.DataApi
 import mforn.io.xtock.data.webservice.configuration.api.StockApi
 import okhttp3.OkHttpClient
@@ -15,7 +18,7 @@ import javax.inject.Singleton
 
 
 @Module
-public class WebserviceModule() {
+public class WebserviceModule {
 
     @Provides
     @Singleton
@@ -25,6 +28,7 @@ public class WebserviceModule() {
         return Retrofit.Builder()
             .baseUrl(BASE_URL)
             .addConverterFactory(GsonConverterFactory.create(gson))
+            .addCallAdapterFactory(CoroutineCallAdapterFactory())
             .client(setOkHttpClient())
             .build()
     }
