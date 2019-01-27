@@ -48,8 +48,7 @@ class HomeActivity : BaseActivity() {
     }
 
     private fun setData() {
-        // TODO mforn: 1/27/19 handle initial click
-        supportActionBar?.title = "Home"
+        bottom_navigation_view.selectedItemId = R.id.navigation_search_stock
     }
 
 }

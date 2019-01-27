@@ -6,7 +6,7 @@ import dagger.Binds
 import dagger.MapKey
 import dagger.Module
 import dagger.multibindings.IntoMap
-import mforn.io.xtock.presentation.home.viewmodel.PerformanceViewModel
+import mforn.io.xtock.presentation.home.viewmodel.SectorPerformanceViewModel
 import javax.inject.Inject
 import javax.inject.Provider
 import javax.inject.Singleton
@@ -32,6 +32,6 @@ abstract class ViewModelModule {
 
     @Binds
     @IntoMap
-    @ViewModelKey(PerformanceViewModel::class)
-    internal abstract fun postSectorPerformanceViewModel(viewModel: PerformanceViewModel): ViewModel
+    @ViewModelKey(SectorPerformanceViewModel::class)
+    internal abstract fun postSectorPerformanceViewModel(viewModel: SectorPerformanceViewModel): ViewModel
 }

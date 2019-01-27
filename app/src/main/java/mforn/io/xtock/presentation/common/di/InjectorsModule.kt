@@ -3,8 +3,9 @@ package mforn.io.xtock.presentation.common.di
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 import mforn.io.xtock.presentation.home.di.HomeModule
+import mforn.io.xtock.presentation.home.di.NotificationsModule
 import mforn.io.xtock.presentation.home.di.SearchStockModule
-import mforn.io.xtock.presentation.home.di.SectorPerformanceFragmentModule
+import mforn.io.xtock.presentation.home.di.SectorPerformanceModule
 import mforn.io.xtock.presentation.home.view.activity.HomeActivity
 import mforn.io.xtock.presentation.home.view.fragment.NotificationsFragment
 import mforn.io.xtock.presentation.home.view.fragment.SearchStockFragment
@@ -23,10 +24,10 @@ abstract class InjectorsModule {
     @ContributesAndroidInjector(modules = [(SearchStockModule::class)])
     abstract fun bindSearchFragment(): SearchStockFragment
 
-    @ContributesAndroidInjector(modules = [(SectorPerformanceFragmentModule::class)])
+    @ContributesAndroidInjector(modules = [(SectorPerformanceModule::class)])
     abstract fun bindSectorPerformanceFragment(): SectorPerformanceFragment
 
-    @ContributesAndroidInjector(modules = [(SearchStockModule::class)])
+    @ContributesAndroidInjector(modules = [(NotificationsModule::class)])
     abstract fun bindNotificationsFragment(): NotificationsFragment
     //endregion
 

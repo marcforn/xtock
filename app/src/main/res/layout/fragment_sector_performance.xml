@@ -7,11 +7,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".presentation.home.view.activity.HomeActivity">
-    <TextView
-            android:text="@string/title_sector_performance"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/textView" app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"/>
+    <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="0dp"
+            android:layout_height="0dp" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent" android:id="@+id/sector_recyclerview"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
