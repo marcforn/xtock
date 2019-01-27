@@ -1,6 +1,6 @@
 package mforn.io.xtock.presentation.home.di
 
-import android.app.Activity
+import androidx.appcompat.app.AppCompatActivity
 import dagger.Binds
 import dagger.Module
 import mforn.io.xtock.presentation.common.di.ActivityModule
@@ -10,7 +10,7 @@ import mforn.io.xtock.presentation.home.view.activity.HomeActivity
 abstract class HomeActivityModule {
 
     @Binds
-    abstract fun bindActivity(activity: HomeActivity): Activity
+    abstract fun bindActivity(activity: HomeActivity): AppCompatActivity
 
 }
 

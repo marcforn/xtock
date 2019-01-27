@@ -1,6 +1,6 @@
 package mforn.io.xtock.presentation.common.view
 
-import dagger.android.DaggerActivity
+import dagger.android.support.DaggerAppCompatActivity
 import org.jetbrains.anko.AnkoLogger
 
-abstract class BaseActivity : DaggerActivity(), AnkoLogger
+abstract class BaseActivity : DaggerAppCompatActivity(), AnkoLogger

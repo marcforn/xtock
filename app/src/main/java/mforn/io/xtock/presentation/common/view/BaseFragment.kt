@@ -1,7 +1,6 @@
 package mforn.io.xtock.presentation.common.view
 
-import dagger.android.DaggerFragment
+import dagger.android.support.DaggerFragment
 import org.jetbrains.anko.AnkoLogger
 
-// TODO mforn: 1/27/19 add Dagger Support Android
 abstract class BaseFragment : DaggerFragment(), AnkoLogger

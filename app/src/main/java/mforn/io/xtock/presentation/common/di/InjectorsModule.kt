@@ -6,7 +6,8 @@ import mforn.io.xtock.presentation.home.di.HomeModule
 import mforn.io.xtock.presentation.home.di.SearchStockModule
 import mforn.io.xtock.presentation.home.di.SectorPerformanceFragmentModule
 import mforn.io.xtock.presentation.home.view.activity.HomeActivity
-import mforn.io.xtock.presentation.home.view.fragment.SearchStockragment
+import mforn.io.xtock.presentation.home.view.fragment.NotificationsFragment
+import mforn.io.xtock.presentation.home.view.fragment.SearchStockFragment
 import mforn.io.xtock.presentation.home.view.fragment.SectorPerformanceFragment
 
 
@@ -19,15 +20,18 @@ abstract class InjectorsModule {
     //endregion
 
     //region Fragments
+    @ContributesAndroidInjector(modules = [(SearchStockModule::class)])
+    abstract fun bindSearchFragment(): SearchStockFragment
+
     @ContributesAndroidInjector(modules = [(SectorPerformanceFragmentModule::class)])
     abstract fun bindSectorPerformanceFragment(): SectorPerformanceFragment
 
     @ContributesAndroidInjector(modules = [(SearchStockModule::class)])
-    abstract fun bindSearchStockFragment(): SearchStockragment
+    abstract fun bindNotificationsFragment(): NotificationsFragment
     //endregion
 
     //region Service
-
+    // TODO mforn: 1/27/19 use WorkManager
     //endregion
 
 }
