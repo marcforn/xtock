@@ -1,4 +1,4 @@
-package mforn.io.xtock.presentation
+package mforn.io.xtock.presentation.common.di
 
 import dagger.Module
 

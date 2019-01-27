@@ -1,4 +1,4 @@
-package mforn.io.xtock.presentation.common
+package mforn.io.xtock.presentation.common.view
 
 import dagger.android.DaggerActivity
 import org.jetbrains.anko.AnkoLogger

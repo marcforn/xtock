@@ -1,10 +1,10 @@
-package mforn.io.xtock.presentation
+package mforn.io.xtock.presentation.home.di
 
 import android.app.Activity
 import dagger.Binds
 import dagger.Module
-import dagger.Provides
-import mforn.io.xtock.presentation.home.HomeActivity
+import mforn.io.xtock.presentation.common.di.ActivityModule
+import mforn.io.xtock.presentation.home.view.activity.HomeActivity
 
 @Module
 abstract class HomeActivityModule {
@@ -15,13 +15,4 @@ abstract class HomeActivityModule {
 }
 
 @Module(includes = [(ActivityModule::class), (HomeActivityModule::class)])
-class HomeModule {
-
-    // TODO mforn: 1/26/19
-    @Provides
-    fun providesAux(): String {
-        return "Test String"
-
-    }
-
-}
+class HomeModule

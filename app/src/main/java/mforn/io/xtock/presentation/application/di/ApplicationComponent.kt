@@ -1,10 +1,11 @@
-package mforn.io.xtock.presentation
+package mforn.io.xtock.presentation.application.di
 
 import dagger.Component
 import dagger.android.AndroidInjectionModule
 import dagger.android.AndroidInjector
 import mforn.io.xtock.data.webservice.configuration.di.WebserviceModule
-import mforn.io.xtock.presentation.application.XtockApplication
+import mforn.io.xtock.presentation.application.view.XtockApplication
+import mforn.io.xtock.presentation.common.di.InjectorsModule
 import javax.inject.Singleton
 
 

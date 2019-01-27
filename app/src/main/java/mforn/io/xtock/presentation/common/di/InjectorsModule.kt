@@ -1,8 +1,9 @@
-package mforn.io.xtock.presentation
+package mforn.io.xtock.presentation.common.di
 
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
-import mforn.io.xtock.presentation.home.HomeActivity
+import mforn.io.xtock.presentation.home.di.HomeModule
+import mforn.io.xtock.presentation.home.view.activity.HomeActivity
 
 
 @Module

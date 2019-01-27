@@ -1,10 +1,10 @@
-package mforn.io.xtock.presentation.home
+package mforn.io.xtock.presentation.home.view.activity
 
 import android.os.Bundle
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.android.synthetic.main.activity_main.*
 import mforn.io.xtock.R
-import mforn.io.xtock.presentation.common.BaseActivity
+import mforn.io.xtock.presentation.common.view.BaseActivity
 
 class HomeActivity : BaseActivity() {
 
