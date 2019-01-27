@@ -12,6 +12,7 @@ import javax.inject.Provider
 import javax.inject.Singleton
 import kotlin.reflect.KClass
 
+
 @Singleton
 class ViewModelFactory @Inject constructor(private val viewModels: MutableMap<Class<out ViewModel>, Provider<ViewModel>>) :
     ViewModelProvider.Factory {
@@ -33,5 +34,5 @@ abstract class ViewModelModule {
     @Binds
     @IntoMap
     @ViewModelKey(SectorPerformanceViewModel::class)
-    internal abstract fun postSectorPerformanceViewModel(viewModel: SectorPerformanceViewModel): ViewModel
+    internal abstract fun sectorPerformanceViewModel(viewModel: SectorPerformanceViewModel): ViewModel
 }
