@@ -5,10 +5,14 @@ import com.jakewharton.retrofit2.adapter.kotlin.coroutines.experimental.Coroutin
 import dagger.Module
 import dagger.Provides
 import mforn.io.xtock.BuildConfig
+import mforn.io.xtock.data.webservice.DataRepositoryImpl
+import mforn.io.xtock.data.webservice.StockRepositoryImpl
 import mforn.io.xtock.data.webservice.configuration.BASE_URL
 import mforn.io.xtock.data.webservice.configuration.TIME_OUT_MILLIS
 import mforn.io.xtock.data.webservice.configuration.api.DataApi
 import mforn.io.xtock.data.webservice.configuration.api.StockApi
+import mforn.io.xtock.domain.repository.DataRepository
+import mforn.io.xtock.domain.repository.StockRepository
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -18,8 +22,9 @@ import javax.inject.Singleton
 
 
 @Module
-public class WebserviceModule {
+class WebserviceModule {
 
+    // region Retrofit Configuration
     @Provides
     @Singleton
     fun provideRetrofitAdapter(): Retrofit {
@@ -54,8 +59,9 @@ public class WebserviceModule {
 
         return httpClient.build()
     }
+    //endregion
 
-
+    // region Webservice API
     @Provides
     @Singleton
     fun provideChartApi(retrofit: Retrofit): StockApi {
@@ -67,6 +73,20 @@ public class WebserviceModule {
     fun provideDataApi(retrofit: Retrofit): DataApi {
         return retrofit.create(DataApi::class.java)
     }
+    //endregion
 
+    //region Webservice Repository
+    @Provides
+    @Singleton
+    fun provideDataRepository(dataApi: DataApi): DataRepository {
+        return DataRepositoryImpl(dataApi)
+    }
+
+    @Provides
+    @Singleton
+    fun provideStockRepository(stockApi: StockApi): StockRepository {
+        return StockRepositoryImpl(stockApi)
+    }
+    //endregion
 
 }

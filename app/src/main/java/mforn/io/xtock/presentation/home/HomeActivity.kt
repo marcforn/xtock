@@ -5,12 +5,8 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.android.synthetic.main.activity_main.*
 import mforn.io.xtock.R
 import mforn.io.xtock.presentation.common.BaseActivity
-import javax.inject.Inject
 
 class HomeActivity : BaseActivity() {
-
-    @Inject
-    lateinit var aux: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,12 +24,12 @@ class HomeActivity : BaseActivity() {
                 message.setText(R.string.title_home)
                 return@OnNavigationItemSelectedListener true
             }
-            R.id.navigation_dashboard -> {
-                message.setText(R.string.title_dashboard)
+            R.id.navigation_sector_performance -> {
+                message.setText(R.string.sector_performance)
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_notifications -> {
-                message.setText(aux)
+                message.text = ""
                 return@OnNavigationItemSelectedListener true
             }
         }
