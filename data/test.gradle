@@ -83,11 +83,11 @@ android.libraryVariants.all { variant ->
                 }
                 limit {
                     counter = 'METHOD'
-                    minimum = new BigDecimal("$COVERAGE_READER_SDK_METHOD")
+                    minimum = new BigDecimal("$COVERAGE_METHOD")
                 }
                 limit {
                     counter = 'LINE'
-                    minimum = new BigDecimal("$COVERAGE_READER_SDK_LINE")
+                    minimum = new BigDecimal("$COVERAGE_LINE")
                 }
             }
         }

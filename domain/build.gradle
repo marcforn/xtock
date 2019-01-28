@@ -5,7 +5,7 @@ plugins {
 apply plugin: 'java-library'
 apply plugin: 'kotlin'
 apply plugin: 'kotlin-kapt'
-// todo coverage test library
+// todo add kokoco
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])

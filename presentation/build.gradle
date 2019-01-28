@@ -40,7 +40,7 @@ dependencies {
     implementation project(":data")
 
     // Kotlin
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$KOTLIN_VERSION"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$KOTLIN_VERSION"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$COROUTINES_VERSION"
     implementation "org.jetbrains.anko:anko-commons:$ANKO_VERSION"
 
