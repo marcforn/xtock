@@ -29,6 +29,7 @@ class SectorPerformanceFragment : BaseFragment() {
         super.onCreate(savedInstanceState)
 
         val viewModel = ViewModelProviders.of(this, viewModelFactory)[SectorPerformanceViewModel::class.java]
+
     }
 
 

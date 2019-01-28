@@ -8,7 +8,7 @@ import mforn.io.xtock.presentation.home.model.SectorPerformanceViewData
 
 class SectorPerformanceAdapter : RecyclerView.Adapter<SectorPerformanceViewHolder>() {
 
-    private val dataset = arrayListOf<SectorPerformanceViewData>()
+    private val dataset = mutableListOf<SectorPerformanceViewData>()
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SectorPerformanceViewHolder {
@@ -25,7 +25,7 @@ class SectorPerformanceAdapter : RecyclerView.Adapter<SectorPerformanceViewHolde
         return dataset.size
     }
 
-    fun setDataSet(newDataSet: List<SectorPerformanceViewData>) {
+    fun updateDataSet(newDataSet: List<SectorPerformanceViewData>) {
         this.dataset.clear()
         this.dataset.addAll(newDataSet)
         notifyDataSetChanged()
