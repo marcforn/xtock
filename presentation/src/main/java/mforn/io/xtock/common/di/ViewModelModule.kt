@@ -6,7 +6,7 @@ import dagger.Binds
 import dagger.MapKey
 import dagger.Module
 import dagger.multibindings.IntoMap
-import mforn.io.xtock.home.viewmodel.SectorPerformanceViewModel
+import mforn.io.xtock.sector.viewmodel.SectorPerformanceViewModel
 import javax.inject.Inject
 import javax.inject.Provider
 import javax.inject.Singleton

@@ -3,13 +3,13 @@ package mforn.io.xtock.common.di
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 import mforn.io.xtock.home.di.HomeModule
-import mforn.io.xtock.home.di.NotificationsModule
-import mforn.io.xtock.home.di.SearchStockModule
-import mforn.io.xtock.home.di.SectorPerformanceModule
+import mforn.io.xtock.notifications.di.NotificationsModule
+import mforn.io.xtock.search.di.SearchStockModule
+import mforn.io.xtock.sector.di.SectorPerformanceModule
 import mforn.io.xtock.home.view.activity.HomeActivity
-import mforn.io.xtock.home.view.fragment.NotificationsFragment
-import mforn.io.xtock.home.view.fragment.SearchStockFragment
-import mforn.io.xtock.home.view.fragment.SectorPerformanceFragment
+import mforn.io.xtock.notifications.view.fragment.NotificationsFragment
+import mforn.io.xtock.search.view.fragment.SearchStockFragment
+import mforn.io.xtock.sector.view.fragment.SectorPerformanceFragment
 
 
 @Module

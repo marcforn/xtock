@@ -6,9 +6,9 @@ import kotlinx.android.synthetic.main.activity_main.*
 import mforn.io.xtock.R
 import mforn.io.xtock.common.view.BaseActivity
 import mforn.io.xtock.common.view.replace
-import mforn.io.xtock.home.view.fragment.newInstanceOfNotificationsFragment
-import mforn.io.xtock.home.view.fragment.newInstanceOfPerformanceFragment
-import mforn.io.xtock.home.view.fragment.newInstanceOfSearchStockFragment
+import mforn.io.xtock.notifications.view.fragment.newInstanceOfNotificationsFragment
+import mforn.io.xtock.sector.view.fragment.newInstanceOfPerformanceFragment
+import mforn.io.xtock.search.view.fragment.newInstanceOfSearchStockFragment
 
 class HomeActivity : BaseActivity() {
 
@@ -28,17 +28,23 @@ class HomeActivity : BaseActivity() {
             when (item.itemId) {
                 R.id.navigation_search_stock -> {
                     supportActionBar?.title = getString(R.string.title_search_stock)
-                    supportFragmentManager.replace(R.id.fragment_container, newInstanceOfSearchStockFragment())
+                    supportFragmentManager.replace(R.id.fragment_container,
+                        newInstanceOfSearchStockFragment()
+                    )
                     return@OnNavigationItemSelectedListener true
                 }
                 R.id.navigation_sector_performance -> {
                     supportActionBar?.title = getString(R.string.title_sector_performance)
-                    supportFragmentManager.replace(R.id.fragment_container, newInstanceOfPerformanceFragment())
+                    supportFragmentManager.replace(R.id.fragment_container,
+                        newInstanceOfPerformanceFragment()
+                    )
                     return@OnNavigationItemSelectedListener true
                 }
                 R.id.navigation_notifications -> {
                     supportActionBar?.title = getString(R.string.title_notifications)
-                    supportFragmentManager.replace(R.id.fragment_container, newInstanceOfNotificationsFragment())
+                    supportFragmentManager.replace(R.id.fragment_container,
+                        newInstanceOfNotificationsFragment()
+                    )
                     return@OnNavigationItemSelectedListener true
                 }
             }

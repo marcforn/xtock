@@ -6,7 +6,7 @@ import dagger.android.support.AndroidSupportInjectionModule
 import mforn.io.xtock.application.view.XtockApplication
 import mforn.io.xtock.common.di.InjectorsModule
 import mforn.io.xtock.common.di.ViewModelModule
-import mforn.io.xtock.webservice.configuration.di.WebserviceModule
+import mforn.io.xtock.network.configuration.di.NetworkModule
 import javax.inject.Singleton
 
 
@@ -16,7 +16,7 @@ import javax.inject.Singleton
         (AndroidSupportInjectionModule::class),
         (ApplicationModule::class),
         (ViewModelModule::class),
-        (WebserviceModule::class),
+        (NetworkModule::class),
         (InjectorsModule::class)
     ]
 )
