@@ -1,6 +1,6 @@
 package mforn.io.xtock.sector.model.mapper
 
-import mforn.io.xtock.model.SectorPerformanceEntity
+import mforn.io.core.domain.model.SectorPerformanceEntity
 import mforn.io.xtock.sector.model.SectorPerformanceViewData
 
 

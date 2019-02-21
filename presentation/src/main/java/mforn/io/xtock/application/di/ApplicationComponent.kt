@@ -3,10 +3,10 @@ package mforn.io.xtock.application.di
 import dagger.Component
 import dagger.android.AndroidInjector
 import dagger.android.support.AndroidSupportInjectionModule
+import mforn.io.core.data.network.configuration.di.NetworkModule
 import mforn.io.xtock.application.view.XtockApplication
 import mforn.io.xtock.common.di.InjectorsModule
 import mforn.io.xtock.common.di.ViewModelModule
-import mforn.io.xtock.network.configuration.di.NetworkModule
 import javax.inject.Singleton
 
 
