@@ -1,35 +1,86 @@
-apply plugin: 'com.android.library'
+import java.text.SimpleDateFormat
+
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+apply from: 'test.gradle'
 
 android {
-    compileSdkVersion 28
-
-
 
     defaultConfig {
-        minSdkVersion 21
-        targetSdkVersion 28
-        versionCode 1
-        versionName "1.0"
+        applicationId "mforn.io.xtock"
 
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        minSdkVersion MIN_SDK_VERSION as int
+        targetSdkVersion TARGET_SDK_VERSION as int
+        compileSdkVersion COMPILE_SDK_VERSION as int
 
+        versionName APP_VERSION as String
+        versionCode buildVersionCode()
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
     buildTypes {
-        release {
+        debug {
             minifyEnabled false
+            applicationIdSuffix ".debug"
+        }
+
+        release {
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
-
 }
 
 dependencies {
     // Project dependencies
-    implementation project(":core")
+    implementation project(path: ':core')
 
-    implementation 'com.android.support:appcompat-v7:28.0.0'
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'com.android.support.test:runner:1.0.2'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    // Kotlin
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$KOTLIN_VERSION"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$COROUTINES_VERSION"
+    implementation "org.jetbrains.anko:anko-commons:$ANKO_VERSION"
+
+    // Android
+    implementation "androidx.appcompat:appcompat:$ANDROID_APP_COMPAT"
+    implementation "androidx.core:core-ktx:$ANDROID_CORE_KTX"
+    implementation "com.google.android.material:material:$ANDROID_MATERIAL"
+    implementation "androidx.constraintlayout:constraintlayout:$ANDROID_CONSTRAINT_LAYOUT"
+    implementation "androidx.lifecycle:lifecycle-extensions:$ANDROID_VIEWMODEL_VERSION"
+    implementation "androidx.lifecycle:lifecycle-viewmodel:$ANDROID_VIEWMODEL_VERSION"
+    kapt "androidx.lifecycle:lifecycle-compiler:$ANDROID_VIEWMODEL_VERSION"
+    // todo review androidx versions to merge it
+    implementation "androidx.recyclerview:recyclerview:1.0.0"
+    implementation "androidx.cardview:cardview:1.0.0"
+
+
+    // Dagger
+    implementation "com.google.dagger:dagger:$DAGGER_VERSION"
+    implementation "com.google.dagger:dagger-android:$DAGGER_VERSION"
+    implementation "com.google.dagger:dagger-android-support:$DAGGER_VERSION"
+    kapt "com.google.dagger:dagger-compiler:$DAGGER_VERSION"
+    kapt "com.google.dagger:dagger-android-processor:$DAGGER_VERSION"
+
+    // Development support
+    debugImplementation "com.facebook.stetho:stetho:$STETHO_VERSION"
+    debugImplementation "com.squareup.leakcanary:leakcanary-android:$LEAK_CANARY_VERSION"
+
+    // Firebase
+    implementation "com.google.firebase:firebase-core:$FIREBASE_CORE_VERSION"
+
+    // Unit Testing
+    testImplementation "junit:junit:$JUNIT_VERSION"
+    testImplementation "androidx.room:room-testing:$ROOM_VERSION"
+
+    // Instrumentation Testing
+    androidTestImplementation "androidx.test:runner:$TEST_RUNNER_VERSION"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$TEST_ESPRESSO_VERSION"
+}
+
+static def buildVersionCode() {
+    def df = new SimpleDateFormat("yyyyMMddHH")
+    df.setTimeZone(TimeZone.getTimeZone("UTC"))
+    return Integer.parseInt(df.format(new Date()).toString())
 }

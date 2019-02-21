@@ -1,6 +1,0 @@
-<resources>
-    <string name="app_name">Xtock</string>
-    <string name="title_search_stock">Search Stock</string>
-    <string name="title_sector_performance">Sector Performance</string>
-    <string name="title_notifications">Notifications</string>
-</resources>

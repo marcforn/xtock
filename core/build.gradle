@@ -63,8 +63,9 @@ dependencies {
     kapt "androidx.room:room-compiler:$ROOM_VERSION"
 
     // Development support
-    debugImplementation "com.facebook.stetho:stetho:$STETHO_VERSION"
-    debugImplementation "com.squareup.leakcanary:leakcanary-android:$LEAK_CANARY_VERSION"
+    //todo move to release/debug buildtype
+    implementation "com.facebook.stetho:stetho:$STETHO_VERSION"
+    implementation "com.squareup.leakcanary:leakcanary-android:$LEAK_CANARY_VERSION"
 
     // Firebase
     implementation "com.google.firebase:firebase-core:$FIREBASE_CORE_VERSION"
