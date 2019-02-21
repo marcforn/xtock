@@ -1,8 +1,7 @@
 package mforn.io.core.data.network.model.mapper
 
-import mforn.io.core.data.network.model.response.SectorPerformanceDto
-import mforn.io.core.data.network.model.response.StockChartDto
-import mforn.io.core.domain.model.SectorPerformanceEntity
+import mforn.io.common.data.network.model.response.SectorPerformanceDto
+import mforn.io.common.data.network.model.response.StockChartDto
 import mforn.io.core.domain.model.StockChartEntity
 
 // TODO mforn: 2/21/19 use Func1 pattern
@@ -33,7 +32,7 @@ fun List<SectorPerformanceDto>.convertToSectorPerformanceEntityList(): List<Sect
     return entityModel
 }
 
-fun SectorPerformanceDto.convertToSectorPerformanceEntity(): SectorPerformanceEntity {
+fun SectorPerformanceDto.convertToSectorPerformanceEntity(): mforn.io.sector.domain.model.SectorPerformanceEntity {
     with(this) {
         return SectorPerformanceEntity(type, name, performance, lastUpdated)
     }

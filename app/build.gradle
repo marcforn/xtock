@@ -36,7 +36,9 @@ android {
 
 dependencies {
     // Project dependencies
+    implementation project(path: ':common')
     implementation project(path: ':core')
+    implementation project(path: ':sector')
 
     // Kotlin
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$KOTLIN_VERSION"
@@ -54,7 +56,6 @@ dependencies {
     // todo review androidx versions to merge it
     implementation "androidx.recyclerview:recyclerview:1.0.0"
     implementation "androidx.cardview:cardview:1.0.0"
-
 
     // Dagger
     implementation "com.google.dagger:dagger:$DAGGER_VERSION"

@@ -1,0 +1,11 @@
+<manifest
+        xmlns:dist="http://schemas.android.com/apk/distribution"
+        package="mforn.io.sector">
+    <dist:module
+            dist:onDemand="true"
+            dist:instant="false"
+            dist:title="@string/title_sector">
+        <dist:fusing dist:include="true"/>
+    </dist:module>
+</manifest>
+

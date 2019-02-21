@@ -1,6 +1,5 @@
 package mforn.io.core.domain.repository
 
-import mforn.io.core.domain.model.SectorPerformanceEntity
 import mforn.io.core.domain.model.StockChartEntity
 
 enum class PeriodOption {
@@ -16,7 +15,5 @@ enum class PeriodOption {
 interface StockRepository {
 
     suspend fun getStockChart(stock: String, period: PeriodOption): List<StockChartEntity>
-
-    suspend fun getSectorPerformance(): List<SectorPerformanceEntity>
 
 }

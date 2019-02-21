@@ -4,8 +4,8 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import mforn.io.common.presentation.view.BaseFragment
 import mforn.io.core.R
-import mforn.io.core.presentation.common.view.BaseFragment
 
 
 fun newInstanceOfNotificationsFragment() = NotificationsFragment()

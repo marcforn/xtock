@@ -3,7 +3,7 @@ package mforn.io.core.presentation.notifications.di
 import androidx.fragment.app.Fragment
 import dagger.Binds
 import dagger.Module
-import mforn.io.core.presentation.common.di.FragmentModule
+import mforn.io.common.presentation.di.FragmentModule
 import mforn.io.core.presentation.notifications.view.fragment.NotificationsFragment
 
 @Module

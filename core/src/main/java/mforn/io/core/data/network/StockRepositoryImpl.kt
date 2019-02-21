@@ -1,10 +1,8 @@
 package mforn.io.core.data.network
 
-import mforn.io.core.data.network.configuration.api.PeriodOptionDto
-import mforn.io.core.data.network.configuration.api.StockApi
-import mforn.io.core.data.network.model.mapper.convertToSectorPerformanceEntityList
+import mforn.io.common.data.network.configuration.api.PeriodOptionDto
+import mforn.io.common.data.network.configuration.api.StockApi
 import mforn.io.core.data.network.model.mapper.convertToStockChartEntityList
-import mforn.io.core.domain.model.SectorPerformanceEntity
 import mforn.io.core.domain.model.StockChartEntity
 import mforn.io.core.domain.repository.PeriodOption
 import mforn.io.core.domain.repository.StockRepository
@@ -25,10 +23,6 @@ class StockRepositoryImpl(private val stockApi: StockApi) : StockRepository {
             PeriodOption.TWO_YEARS -> PeriodOptionDto.TWO_YEARS.value
             PeriodOption.FIVE_YEARS -> PeriodOptionDto.FIVE_YEARS.value
         }
-    }
-
-    override suspend fun getSectorPerformance(): List<SectorPerformanceEntity> {
-        return stockApi.getSectorPerformance().await().convertToSectorPerformanceEntityList()
     }
 
 }

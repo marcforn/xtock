@@ -1,0 +1,78 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+    defaultConfig {
+        minSdkVersion MIN_SDK_VERSION as int
+        targetSdkVersion TARGET_SDK_VERSION as int
+        compileSdkVersion COMPILE_SDK_VERSION as int
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+
+dependencies {
+    // Kotlin
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$KOTLIN_VERSION"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$COROUTINES_VERSION"
+    implementation "org.jetbrains.anko:anko-commons:$ANKO_VERSION"
+
+    // Android
+    implementation "androidx.appcompat:appcompat:$ANDROID_APP_COMPAT"
+    implementation "androidx.core:core-ktx:$ANDROID_CORE_KTX"
+    implementation "com.google.android.material:material:$ANDROID_MATERIAL"
+    implementation "androidx.constraintlayout:constraintlayout:$ANDROID_CONSTRAINT_LAYOUT"
+    implementation "androidx.lifecycle:lifecycle-extensions:$ANDROID_VIEWMODEL_VERSION"
+    implementation "androidx.lifecycle:lifecycle-viewmodel:$ANDROID_VIEWMODEL_VERSION"
+    kapt "androidx.lifecycle:lifecycle-compiler:$ANDROID_VIEWMODEL_VERSION"
+    // todo review androidx versions to merge it
+    implementation "androidx.recyclerview:recyclerview:1.0.0"
+    implementation "androidx.cardview:cardview:1.0.0"
+
+    // Dagger
+    implementation "com.google.dagger:dagger:$DAGGER_VERSION"
+    implementation "com.google.dagger:dagger-android:$DAGGER_VERSION"
+    implementation "com.google.dagger:dagger-android-support:$DAGGER_VERSION"
+    kapt "com.google.dagger:dagger-compiler:$DAGGER_VERSION"
+    kapt "com.google.dagger:dagger-android-processor:$DAGGER_VERSION"
+
+    // Retrofit
+    api "com.squareup.retrofit2:retrofit:$RETROFIT_VERSION"
+    implementation "com.squareup.retrofit2:converter-gson:$RETROFIT_VERSION"
+    implementation "com.squareup.okhttp3:logging-interceptor:$OKHTP3_VERSION"
+    implementation "com.jakewharton.retrofit:retrofit2-kotlin-coroutines-experimental-adapter:$RETROFIT_COROUTINES_ADAPTER"
+
+    // Gson
+    implementation "com.google.code.gson:gson:$GSON_VERSION"
+
+    // Room
+    implementation "androidx.room:room-runtime:$ROOM_VERSION"
+    implementation "androidx.room:room-coroutines:$ROOM_VERSION"
+    kapt "androidx.room:room-compiler:$ROOM_VERSION"
+
+    // Development support
+    debugImplementation "com.facebook.stetho:stetho:$STETHO_VERSION"
+    debugImplementation "com.squareup.leakcanary:leakcanary-android:$LEAK_CANARY_VERSION"
+
+    // Firebase
+    implementation "com.google.firebase:firebase-core:$FIREBASE_CORE_VERSION"
+
+    // Unit Testing
+    testImplementation "junit:junit:$JUNIT_VERSION"
+    testImplementation "androidx.room:room-testing:$ROOM_VERSION"
+
+    // Instrumentation Testing
+    androidTestImplementation "androidx.test:runner:$TEST_RUNNER_VERSION"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$TEST_ESPRESSO_VERSION"
+
+}
