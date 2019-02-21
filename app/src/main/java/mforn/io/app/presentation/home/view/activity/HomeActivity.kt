@@ -5,8 +5,8 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.android.synthetic.main.activity_main.*
 import mforn.io.common.presentation.view.BaseActivity
 import mforn.io.common.presentation.view.replace
-import mforn.io.core.presentation.notifications.view.fragment.newInstanceOfNotificationsFragment
-import mforn.io.core.presentation.search.view.fragment.newInstanceOfSearchStockFragment
+import mforn.io.notifications.presentation.fragment.newInstanceOfNotificationsFragment
+import mforn.io.search.presentation.fragment.newInstanceOfSearchStockFragment
 import mforn.io.sector.presentation.view.fragment.newInstanceOfPerformanceFragment
 import mforn.io.xtock.R
 
@@ -29,7 +29,8 @@ class HomeActivity : BaseActivity() {
                 R.id.navigation_search_stock -> {
                     supportActionBar?.title = getString(R.string.title_search_stock)
                     supportFragmentManager.replace(
-                        R.id.fragment_container, newInstanceOfSearchStockFragment()
+                        R.id.fragment_container,
+                        newInstanceOfSearchStockFragment()
                     )
                     return@OnNavigationItemSelectedListener true
                 }

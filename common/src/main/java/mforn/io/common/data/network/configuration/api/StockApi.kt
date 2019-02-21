@@ -5,6 +5,8 @@ import mforn.io.common.data.network.configuration.PATH_SECTOR_PERFORMANCE
 import mforn.io.common.data.network.configuration.PATH_STOCK
 import mforn.io.common.data.network.configuration.PERIOD
 import mforn.io.common.data.network.configuration.STOCK
+import mforn.io.common.data.network.model.response.SectorPerformanceDto
+import mforn.io.common.data.network.model.response.StockChartDto
 import retrofit2.http.GET
 import retrofit2.http.Path
 

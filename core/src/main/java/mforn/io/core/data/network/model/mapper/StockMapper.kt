@@ -1,6 +1,5 @@
 package mforn.io.core.data.network.model.mapper
 
-import mforn.io.common.data.network.model.response.SectorPerformanceDto
 import mforn.io.common.data.network.model.response.StockChartDto
 import mforn.io.core.domain.model.StockChartEntity
 
@@ -22,18 +21,3 @@ fun StockChartDto.convertToStockChartEntity(): StockChartEntity {
     }
 }
 
-fun List<SectorPerformanceDto>.convertToSectorPerformanceEntityList(): List<SectorPerformanceEntity> {
-    val entityModel = mutableListOf<SectorPerformanceEntity>()
-
-    for (item in this) {
-        entityModel.add(item.convertToSectorPerformanceEntity())
-    }
-
-    return entityModel
-}
-
-fun SectorPerformanceDto.convertToSectorPerformanceEntity(): mforn.io.sector.domain.model.SectorPerformanceEntity {
-    with(this) {
-        return SectorPerformanceEntity(type, name, performance, lastUpdated)
-    }
-}

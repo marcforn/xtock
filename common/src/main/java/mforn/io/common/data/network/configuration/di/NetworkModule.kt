@@ -34,18 +34,4 @@ class NetworkModule {
     }
     //endregion
 
-    //region Network Repository
-    @Provides
-    @Singleton
-    fun provideDataRepository(dataApi: DataApi): DataRepository {
-        return DataRepositoryImpl(dataApi)
-    }
-
-    @Provides
-    @Singleton
-    fun provideStockRepository(stockApi: StockApi): StockRepository {
-        return StockRepositoryImpl(stockApi)
-    }
-    //endregion
-
 }
