@@ -6,9 +6,7 @@ import dagger.android.DaggerApplication
 import org.jetbrains.anko.AnkoLogger
 import org.jetbrains.anko.info
 
-// TODO mforn: 2/21/19 move to release package
 abstract class BaseApplication : DaggerApplication(), AnkoLogger {
-
 
     override fun onCreate() {
         super.onCreate()
