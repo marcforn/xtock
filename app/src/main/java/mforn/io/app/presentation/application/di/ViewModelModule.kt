@@ -17,7 +17,6 @@ import kotlin.reflect.KClass
 class ViewModelFactory @Inject constructor(private val viewModels: MutableMap<Class<out ViewModel>, Provider<ViewModel>>) :
     ViewModelProvider.Factory {
 
-    // TODO mforn: 1/28/19 check cast
     override fun <T : ViewModel> create(modelClass: Class<T>): T = viewModels[modelClass]?.get() as T
 }
 

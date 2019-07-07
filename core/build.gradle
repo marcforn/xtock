@@ -37,10 +37,8 @@ dependencies {
     implementation "androidx.constraintlayout:constraintlayout:$ANDROID_CONSTRAINT_LAYOUT"
     implementation "androidx.lifecycle:lifecycle-extensions:$ANDROID_VIEWMODEL_VERSION"
     implementation "androidx.lifecycle:lifecycle-viewmodel:$ANDROID_VIEWMODEL_VERSION"
+    implementation "androidx.recyclerview:recyclerview:$ANDROID_RECYCLERVIEW_VERSION"
     kapt "androidx.lifecycle:lifecycle-compiler:$ANDROID_VIEWMODEL_VERSION"
-    // todo review androidx versions to merge it
-    implementation "androidx.recyclerview:recyclerview:1.0.0"
-    implementation "androidx.cardview:cardview:1.0.0"
 
     // Dagger
     implementation "com.google.dagger:dagger:$DAGGER_VERSION"
