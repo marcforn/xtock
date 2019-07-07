@@ -1,3 +1,3 @@
-package mforn.io.core.domain.interactor
+package mforn.io.common.domain.interactor
 
 class StockInteractorImpl : StockInteractor

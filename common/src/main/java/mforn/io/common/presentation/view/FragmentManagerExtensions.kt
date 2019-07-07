@@ -13,8 +13,8 @@ fun FragmentManager.replace(
     fragment?.let {
         val fragmentTransaction = beginTransaction()
         fragmentTransaction.replace(containerResId, it)
-        backStackName?.let {
-            fragmentTransaction.addToBackStack(it)
+        backStackName?.let { it2 ->
+            fragmentTransaction.addToBackStack(it2)
         }
         if (commitAllowingStateLoss) {
             fragmentTransaction.commitAllowingStateLoss()

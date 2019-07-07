@@ -1,4 +1,4 @@
-package mforn.io.core.domain.model
+package mforn.io.common.domain.model
 
 
 data class StockChartEntity(

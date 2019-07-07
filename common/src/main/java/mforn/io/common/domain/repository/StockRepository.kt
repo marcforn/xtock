@@ -1,6 +1,6 @@
-package mforn.io.core.domain.repository
+package mforn.io.common.domain.repository
 
-import mforn.io.core.domain.model.StockChartEntity
+import mforn.io.common.domain.model.StockChartEntity
 
 enum class PeriodOption {
     ONE_DAY,

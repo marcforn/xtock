@@ -1,11 +1,11 @@
-package mforn.io.core.data.network
+package mforn.io.common.data.network
 
 import mforn.io.common.data.network.configuration.api.PeriodOptionDto
 import mforn.io.common.data.network.configuration.api.StockApi
-import mforn.io.core.data.network.model.mapper.convertToStockChartEntityList
-import mforn.io.core.domain.model.StockChartEntity
-import mforn.io.core.domain.repository.PeriodOption
-import mforn.io.core.domain.repository.StockRepository
+import mforn.io.common.data.network.model.mapper.convertToStockChartEntityList
+import mforn.io.common.domain.model.StockChartEntity
+import mforn.io.common.domain.repository.PeriodOption
+import mforn.io.common.domain.repository.StockRepository
 
 class StockRepositoryImpl(private val stockApi: StockApi) : StockRepository {
 

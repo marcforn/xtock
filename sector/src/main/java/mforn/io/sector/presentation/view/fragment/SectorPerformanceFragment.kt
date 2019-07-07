@@ -23,8 +23,7 @@ class SectorPerformanceFragment : BaseFragment() {
 
     private lateinit var viewModel: SectorPerformanceViewModel
 
-    private val adapter: SectorPerformanceAdapter =
-        SectorPerformanceAdapter()
+    private val adapter: SectorPerformanceAdapter = SectorPerformanceAdapter()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

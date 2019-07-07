@@ -1,7 +1,7 @@
-package mforn.io.core.data.network.model.mapper
+package mforn.io.common.data.network.model.mapper
 
 import mforn.io.common.data.network.model.response.StockChartDto
-import mforn.io.core.domain.model.StockChartEntity
+import mforn.io.common.domain.model.StockChartEntity
 
 // TODO mforn: 2/21/19 use Func1 pattern
 

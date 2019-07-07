@@ -1,9 +1,9 @@
-package mforn.io.core.data.network
+package mforn.io.common.data.network
 
 import mforn.io.common.data.network.configuration.api.DataApi
-import mforn.io.core.data.network.model.mapper.convertToSymbolDataEntityList
-import mforn.io.core.domain.model.SymbolDataEntity
-import mforn.io.core.domain.repository.DataRepository
+import mforn.io.common.data.network.model.mapper.convertToSymbolDataEntityList
+import mforn.io.common.domain.model.SymbolDataEntity
+import mforn.io.common.domain.repository.DataRepository
 
 class DataRepositoryImpl(private val dataApi: DataApi) : DataRepository {
 

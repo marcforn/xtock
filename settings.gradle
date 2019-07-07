@@ -1,1 +1,1 @@
-include ':app', ':core', ':sector', ':common', ':notifications', ':search'
+include ':app', ':sector', ':common', ':notifications', ':search'

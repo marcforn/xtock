@@ -32,7 +32,7 @@ android.applicationVariants.all { variant ->
         ]
 
         // generated classes
-        classDirectories = fileTree(
+        classDirectories.from = fileTree(
                 dir: "$buildDir/intermediates/classes/" + variant.name,
                 includes: includes,
                 exclude: excludes
@@ -43,11 +43,11 @@ android.applicationVariants.all { variant ->
         )
 
         // sources
-        sourceDirectories = files([
+        sourceDirectories.from = files([
                 android.sourceSets.main.java.srcDirs,
                 "src/main/kotlin"
         ])
-        executionData = files("$buildDir/jacoco/test" + variant.name.capitalize() + "UnitTest.exec")
+        executionData.from = files("$buildDir/jacoco/test" + variant.name.capitalize() + "UnitTest.exec")
     }
 
     task("jacocoTestCoverage" + variant.name.capitalize() + "Verification",
@@ -66,7 +66,7 @@ android.applicationVariants.all { variant ->
         ]
 
         // generated classes
-        classDirectories = fileTree(
+        classDirectories.from = fileTree(
                 dir: "$buildDir/intermediates/classes/" + variant.name,
                 includes: includes,
                 exclude: excludes
@@ -77,11 +77,11 @@ android.applicationVariants.all { variant ->
         )
 
         // sources
-        sourceDirectories = files([
+        sourceDirectories.from = files([
                 android.sourceSets.main.java.srcDirs,
                 "src/main/kotlin"
         ])
-        executionData = files("$buildDir/jacoco/test" + variant.name.capitalize() + "UnitTest.exec")
+        executionData.from = files("$buildDir/jacoco/test" + variant.name.capitalize() + "UnitTest.exec")
 
         violationRules {
             setFailOnViolation(true)

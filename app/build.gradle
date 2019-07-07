@@ -37,7 +37,6 @@ android {
 dependencies {
     // Project dependencies
     implementation project(path: ':common')
-    implementation project(path: ':core')
     implementation project(path: ':sector')
     implementation project(path: ':search')
     implementation project(path: ':notifications')

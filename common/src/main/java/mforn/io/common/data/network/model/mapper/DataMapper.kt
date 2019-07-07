@@ -1,7 +1,7 @@
-package mforn.io.core.data.network.model.mapper
+package mforn.io.common.data.network.model.mapper
 
 import mforn.io.common.data.network.model.response.SymbolDataDto
-import mforn.io.core.domain.model.SymbolDataEntity
+import mforn.io.common.domain.model.SymbolDataEntity
 
 
 fun List<SymbolDataDto>.convertToSymbolDataEntityList(): List<SymbolDataEntity> {
